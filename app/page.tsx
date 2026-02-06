@@ -36,11 +36,11 @@ const DATA = {
   vision:
     "Une rencontre exclusive réservée aux leaders de l'industrie. Pas de streaming, pas de replay. Ce qui se dit au Nexus reste au Nexus. Une opportunité unique de redéfinir les standards de demain.",
   images: {
-    hero: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1920&auto=format&fit=crop', // Crowd dark / concert style
+    hero: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1920&auto=format&fit=crop',
     vision:
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1920&auto=format&fit=crop', // Business man silhouette
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1920&auto=format&fit=crop',
     venue:
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop', // Architecture modern
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop',
   },
   speakers: [
     {
@@ -78,7 +78,8 @@ export default function CorporatePage() {
     if (passwordInput.toUpperCase() === SECRET_PASS) {
       setIsAuthenticated(true);
     } else {
-      setErrorMsg("Code d&apos;accréditation invalide.");
+      // ICI : Apostrophe normale car c'est une string JS
+      setErrorMsg("Code d'accréditation invalide.");
     }
   };
 
@@ -152,11 +153,12 @@ export default function CorporatePage() {
                 <Sparkles size={14} /> The Vision
               </span>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight leading-none">
+                {/* ICI : &apos; car c'est du texte HTML visible */}
                 Redéfinir <br />
                 l&apos;Excellence.
               </h2>
               <p className="text-xl leading-relaxed text-slate-600 font-light mb-8 border-l-4 border-indigo-600 pl-6">
-                "{DATA.vision}"
+                &quot;{DATA.vision}&quot;
               </p>
               <div className="grid grid-cols-2 gap-8 mt-12">
                 <div>
@@ -230,12 +232,13 @@ export default function CorporatePage() {
       </section>
 
       {/* --- AGENDA --- */}
-      <section className="py-24 bg-slate-950 relative">
+      <section className="py-24 bg-slate-900 relative">
         <div className="container mx-auto px-6 relative z-10 max-w-3xl">
           <div className="text-center mb-16">
             <span className="text-indigo-500 font-bold uppercase tracking-widest text-xs mb-2 block">
               Timeline
             </span>
+            {/* ICI : &apos; car c'est du texte visible */}
             <h2 className="text-3xl md:text-5xl font-bold text-white">
               L&apos;Agenda
             </h2>
@@ -248,10 +251,11 @@ export default function CorporatePage() {
               desc="Réseautage & Enregistrement."
               icon={<Users />}
             />
+            {/* ICI : Apostrophe normale dans les props (attributs) */}
             <TimelineItem
               time="10:30"
-              title="Keynote d&apos;Ouverture"
-              desc="L&apos;avenir de l&apos;IA générative dans l&apos;industrie."
+              title="Keynote d'Ouverture"
+              desc="L'avenir de l'IA générative dans l'industrie."
               icon={<Mic2 />}
               active={true}
             />
@@ -288,7 +292,8 @@ export default function CorporatePage() {
         </p>
         <div className="flex justify-center gap-4">
           <button className="px-8 py-3 bg-slate-900 text-white rounded-sm hover:bg-indigo-600 transition-colors flex items-center gap-2 uppercase text-xs font-bold tracking-widest">
-            <Navigation size={14} /> Plan d'accès
+            {/* ICI : &apos; pour le texte du bouton */}
+            <Navigation size={14} /> Plan d&apos;accès
           </button>
           <button className="px-8 py-3 border border-slate-300 text-slate-900 rounded-sm hover:border-indigo-600 hover:text-indigo-600 transition-colors flex items-center gap-2 uppercase text-xs font-bold tracking-widest">
             <Calendar size={14} /> Add to Calendar
