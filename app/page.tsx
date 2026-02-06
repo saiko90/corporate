@@ -78,7 +78,7 @@ export default function CorporatePage() {
     if (passwordInput.toUpperCase() === SECRET_PASS) {
       setIsAuthenticated(true);
     } else {
-      setErrorMsg("Code d'accréditation invalide.");
+      setErrorMsg("Code d&apos;accréditation invalide.");
     }
   };
 
@@ -153,7 +153,7 @@ export default function CorporatePage() {
               </span>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight leading-none">
                 Redéfinir <br />
-                l'Excellence.
+                l&apos;Excellence.
               </h2>
               <p className="text-xl leading-relaxed text-slate-600 font-light mb-8 border-l-4 border-indigo-600 pl-6">
                 "{DATA.vision}"
@@ -237,7 +237,7 @@ export default function CorporatePage() {
               Timeline
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white">
-              L'Agenda
+              L&apos;Agenda
             </h2>
           </div>
 
@@ -250,8 +250,8 @@ export default function CorporatePage() {
             />
             <TimelineItem
               time="10:30"
-              title="Keynote d'Ouverture"
-              desc="L'avenir de l'IA générative dans l'industrie."
+              title="Keynote d&apos;Ouverture"
+              desc="L&apos;avenir de l&apos;IA générative dans l&apos;industrie."
               icon={<Mic2 />}
               active={true}
             />
