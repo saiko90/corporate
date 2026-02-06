@@ -73,12 +73,12 @@ export default function CorporatePage() {
   const [errorMsg, setErrorMsg] = useState('');
   const SECRET_PASS = 'VIP2026';
 
-  const handleLogin = (e) => {
+  // CORRECTION ICI : ajout de (e: any)
+  const handleLogin = (e: any) => {
     e.preventDefault();
     if (passwordInput.toUpperCase() === SECRET_PASS) {
       setIsAuthenticated(true);
     } else {
-      // ICI : Apostrophe normale car c'est une string JS
       setErrorMsg("Code d'accréditation invalide.");
     }
   };
@@ -153,7 +153,6 @@ export default function CorporatePage() {
                 <Sparkles size={14} /> The Vision
               </span>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight leading-none">
-                {/* ICI : &apos; car c'est du texte HTML visible */}
                 Redéfinir <br />
                 l&apos;Excellence.
               </h2>
@@ -192,7 +191,7 @@ export default function CorporatePage() {
         </div>
       </section>
 
-      {/* --- INTERVENANTS (Remplacement Galerie) --- */}
+      {/* --- INTERVENANTS --- */}
       <section className="py-24 bg-slate-900 relative border-t border-slate-800">
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
           <SectionTitle
@@ -238,7 +237,6 @@ export default function CorporatePage() {
             <span className="text-indigo-500 font-bold uppercase tracking-widest text-xs mb-2 block">
               Timeline
             </span>
-            {/* ICI : &apos; car c'est du texte visible */}
             <h2 className="text-3xl md:text-5xl font-bold text-white">
               L&apos;Agenda
             </h2>
@@ -251,7 +249,6 @@ export default function CorporatePage() {
               desc="Réseautage & Enregistrement."
               icon={<Users />}
             />
-            {/* ICI : Apostrophe normale dans les props (attributs) */}
             <TimelineItem
               time="10:30"
               title="Keynote d'Ouverture"
@@ -292,7 +289,6 @@ export default function CorporatePage() {
         </p>
         <div className="flex justify-center gap-4">
           <button className="px-8 py-3 bg-slate-900 text-white rounded-sm hover:bg-indigo-600 transition-colors flex items-center gap-2 uppercase text-xs font-bold tracking-widest">
-            {/* ICI : &apos; pour le texte du bouton */}
             <Navigation size={14} /> Plan d&apos;accès
           </button>
           <button className="px-8 py-3 border border-slate-300 text-slate-900 rounded-sm hover:border-indigo-600 hover:text-indigo-600 transition-colors flex items-center gap-2 uppercase text-xs font-bold tracking-widest">
@@ -377,7 +373,8 @@ function Hero() {
   );
 }
 
-function SectionTitle({ subtitle, title, light = false }) {
+// CORRECTION ICI : ajout de :any
+function SectionTitle({ subtitle, title, light = false }: any) {
   return (
     <div className="text-center mb-8">
       <span className="text-indigo-500 uppercase tracking-widest text-xs font-bold mb-2 block">
@@ -394,7 +391,8 @@ function SectionTitle({ subtitle, title, light = false }) {
   );
 }
 
-function TimelineItem({ time, title, desc, icon, active = false }) {
+// CORRECTION ICI : ajout de :any
+function TimelineItem({ time, title, desc, icon, active = false }: any) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -432,7 +430,8 @@ function TimelineItem({ time, title, desc, icon, active = false }) {
   );
 }
 
-function ParallaxSection({ image, text }) {
+// CORRECTION ICI : ajout de :any
+function ParallaxSection({ image, text }: any) {
   return (
     <div className="relative h-[50vh] overflow-hidden flex items-center justify-center">
       <div
@@ -475,7 +474,8 @@ function Countdown() {
   );
 }
 
-function RsvpOverlay({ onClose }) {
+// CORRECTION ICI : ajout de :any
+function RsvpOverlay({ onClose }: any) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
