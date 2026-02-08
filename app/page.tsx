@@ -104,7 +104,7 @@ export default function CorporatePage() {
           <h1 className="text-3xl md:text-5xl font-sans font-bold text-white mb-2 tracking-tighter">
             {DATA.event}
           </h1>
-          <p className="text-slate-500 text-sm mb-12">Portal Invité</p>
+          <p className="text-slate-500 text-sm mb-12">Mot de passe: VIP2026</p>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="relative">
