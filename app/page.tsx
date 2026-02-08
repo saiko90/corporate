@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import NeoCardFloatingBadge from './components/NeoCardFloatingBadge';
+
 import {
   motion,
   useScroll,
@@ -98,6 +100,7 @@ export default function CorporatePage() {
           <div className="flex justify-center mb-6">
             <ShieldCheck className="w-12 h-12 text-indigo-500 animate-pulse" />
           </div>
+          
           <p className="text-indigo-400 text-xs uppercase tracking-[0.3em] mb-4 font-bold">
             Accès Sécurisé
           </p>
@@ -129,6 +132,7 @@ export default function CorporatePage() {
             Powered by NeoCard Corporate
           </p>
         </div>
+        
       </div>
     );
   }
@@ -143,6 +147,8 @@ export default function CorporatePage() {
 
       {/* COMPTE A REBOURS */}
       <Countdown />
+      <NeoCardFloatingBadge theme="light" />
+
 
       {/* --- LA VISION --- */}
       <section className="py-24 bg-white text-slate-900 relative">
